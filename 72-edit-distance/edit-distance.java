@@ -12,7 +12,7 @@ class Solution {
         if(j==w2.length()) return w1.length()-i;
         if(dp[i][j]!=-1) return dp[i][j];
         if(w1.charAt(i)==w2.charAt(j)){
-            return solve(w1,w2,i+1,j+1,dp);
+            ans=solve(w1,w2,i+1,j+1,dp);
         }
         else{
             int insert=1+ solve(w1,w2,i,j+1,dp);
