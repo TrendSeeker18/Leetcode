@@ -1,18 +1,18 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int [] l= {-1,-1};
+        int [] l={-1,-1};
         int low=0;
         int high=nums.length-1;
         while(low<=high){
             int mid=(low+high)/2;
-            if(target==nums[mid]){
+            if(nums[mid]==target){
                 l[0]=mid;
                 high=mid-1;
             }
-            else if(target<nums[mid]){
+            else if (nums[mid]>target){
                 high=mid-1;
             }
-            else{
+            else {
                 low=mid+1;
             }
         }
@@ -21,14 +21,14 @@ class Solution {
         high=nums.length-1;
         while(low<=high){
             int mid=(low+high)/2;
-            if(target==nums[mid]){
+            if(nums[mid]==target){
                 l[1]=mid;
                 low=mid+1;
             }
-            else if(target<nums[mid]){
+            else if (nums[mid]>target){
                 high=mid-1;
             }
-            else{
+            else {
                 low=mid+1;
             }
         }
